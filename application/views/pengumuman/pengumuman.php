@@ -13,7 +13,7 @@
             <tr>
               <th>No</th>
               <th>Judul</th>
-              <th>Posisi</th>
+              <th>Isi</th>
               <th>Foto</th>
               <th>Aksi</th>
             </tr>
@@ -23,8 +23,8 @@
               <tr>
                 <td><?php echo $no++ ?></td>
                 <td><?php echo $value->judul ?></td>
-                <td><?php echo $value->posisi ?></td>
-                <td><?php echo $value->posisi ?></td>
+                <td><?php echo $value->isi ?></td>
+                <td><?php echo $value->isi ?></td>
                 <td>
                   <a href="" class="btn btn-warning">
                     <i class="material-icons">edit</i> &nbsp;

@@ -14,8 +14,6 @@
 </div>
 </div>
 </div>
-<!--   Core JS Files   -->
-<script src="<?php echo base_url()?>/assets/js/core/jquery.min.js"></script>
 <script src="<?php echo base_url()?>/assets/js/core/popper.min.js"></script>
 <script src="<?php echo base_url()?>/assets/js/core/bootstrap-material-design.min.js"></script>
 <script src="https://unpkg.com/default-passive-events"></script>
@@ -33,8 +31,35 @@
 <!-- Material Dashboard DEMO methods, don't include it in your project! -->
 <script src="<?php echo base_url()?>/assets/demo/demo.js"></script>
 <script>
+var quill = '';
 $(document).ready(function() {
+  // quill
+  var toolbarOptions = [
+    ['bold', 'italic', 'underline', 'strike'],        // toggled buttons
+    ['blockquote', 'code-block'],
+    ['link', 'image'],
+    [{ 'header': 1 }, { 'header': 2 }],               // custom button values
+    [{ 'list': 'ordered'}, { 'list': 'bullet' }],
+    [{ 'script': 'sub'}, { 'script': 'super' }],      // superscript/subscript
+    [{ 'indent': '-1'}, { 'indent': '+1' }],          // outdent/indent
+    [{ 'direction': 'rtl' }],                         // text direction
+
+    [{ 'header': [1, 2, 3, 4, 5, 6, false] }],
+
+    [{ 'color': [] }, { 'background': [] }],          // dropdown with defaults from theme
+    [{ 'font': [] }],
+    [{ 'align': [] }],
+
+    ['clean']                                         // remove formatting button
+  ];
+  quill = new Quill('#quill-editor', {
+    modules: {
+      toolbar: toolbarOptions
+    },
+    theme: 'snow'
+  });
 $().ready(function() {
+
   $sidebar = $('.sidebar');
 
   $sidebar_img_container = $sidebar.find('.sidebar-background');
