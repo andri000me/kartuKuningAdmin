@@ -53,7 +53,12 @@ $route['default_controller'] = 'welcome';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
+$route['infront'] = 'welcome';
+$route['dashboard'] = 'dashboard/index';
+$route['logout'] = 'welcome/logout';
+
 $route['berita'] = 'Berita/index';
 $route['pengumuman'] = 'Pengumuman/index';
 $route['papan-informasi'] = 'Papan/index';
 $route['lowongan-kerja'] = 'Lowongan/index';
+$route['halaman-statis'] = 'statis/index';

@@ -4,30 +4,28 @@
             <div class="col-md-12 text-right">
                 <a href="javascript:void(0)" onclick="return showModal('add', 0)" class="btn btn-primary">
                     <i class="material-icons">add</i> &nbsp;
-                    <span>Tambah Informasi</span>
+                    <span>Tambah Lowongan</span>
                 </a>
             </div>
             <div class="col-md-12 pt-4">
                 <table class="table table-striped table-bordered dataTable">
                     <thead>
-                        <tr>
+                        <tr >
                             <th class="font-weight-bold">No</th>
                             <th class="font-weight-bold">Judul</th>
-                            <th class="font-weight-bold">Isi</th>
-                            <th class="font-weight-bold">Kategori</th>
+                            <th class="font-weight-bold">Isi</th>   
                             <th class="font-weight-bold">Aksi</th>
                         </tr>
                     </thead>
                     <tbody>
                         <?php
-                        $no = 01;
-                        foreach ($papan as $key => $value) {
+                        $no = 1;
+                        foreach ($statis as $key => $value) {
                             ?>
                             <tr>
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $value->judul ?></td>
-                                <td><?php echo $value->isi ?></td>
-                                <td><?php echo $value->nama_kat_infor ?></td>
+                                <td><?php echo strip_tags($value->isi) ?></td>
                                 <td>
                                     <a href="javascript:void(0)" onclick="return showModal('edit', '<?php echo $value->id ?>')" class="btn btn-warning">
                                         <i class="material-icons">edit</i> &nbsp;
@@ -78,24 +76,23 @@
     });
     function showModal(what, id) {
         if (what == 'add') {
-            $("#exampleModalLabel").html("Tambah Informasi");
+            $("#exampleModalLabel").html("Tambah Halaman");
             who = 'add';
             $("[name='judul']").val("");
-            $("[name='kategori']").val("");
+            $("[name='isi']").val("");
             quill.root.innerHTML = "";
-            window.history.pushState("add", "Tambah Data", "?mode=add");
+            window.history.pushState("add", "Tambah Halaman", "?mode=add");
             $("#modalDialog").modal('show');
         } else {
-            $("#exampleModalLabel").html("Edit Informasi");
+            $("#exampleModalLabel").html("Edit Halaman");
             who = 'edit';
-            window.history.pushState("edit", "Edit Data", "?mode=edit&data=" + id);
+            window.history.pushState("edit", "Edit Halaman", "?mode=edit&data=" + id);
             $.ajax({
-                url: "<?php echo site_url('papan/get_/') ?>" + id,
+                url: "<?php echo site_url('statis/get_/') ?>" + id,
                 type: 'GET',
                 dataType: 'json',
                 success: function (data, textStatus, jqXHR) {
                     $("[name='judul']").val(data.judul);
-                    $("[name='kategori']").val(data.kat_informasi);
                     quill.root.innerHTML = data.isi;
 
                     $("#modalDialog").modal('show');
@@ -108,7 +105,7 @@
     }
     function hapus(id) {
         var i = confirm("Hapus data ini ?");
-        var url = "<?php echo site_url('papan/delete/') ?>" + id;
+        var url = "<?php echo site_url('statis/delete/') ?>" + id;
         console.log(url);
         if (i) {
             $.ajax({

@@ -16,7 +16,7 @@ class Models extends CI_Model{
     return $this->db->affected_rows();
   }
 
-  public function FunctionName($table, $data, $where)
+  public function update($table, $data, $where)
   {
     $this->db->where($where);
     $this->db->update($table, $data);
