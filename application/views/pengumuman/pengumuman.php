@@ -4,7 +4,7 @@
             <div class="col-md-12 text-right">
                 <a href="javascript:void(0)" class="btn btn-primary" onclick="return showModal('add', 0)">
                     <i class="material-icons">add</i> &nbsp;
-                    <span>Tambah Berita</span>
+                    <span>Tambah Pengumuman</span>
                 </a>
             </div>
             <div class="col-md-12 pt-4">
@@ -29,7 +29,7 @@
                                 <td><?php echo $no++ ?></td>
                                 <td><?php echo $value->judul ?></td>
                                 <td><img class="w-25 img img-thumbnail" src="<?php echo base_url('uploads/news/' . $value->fitur_photo) ?>"></td>
-                                <td><?php echo $value->isi ?></td>
+                                <td><?php echo $this->etc->stringCut($value->isi, 250) ?></td>
                                 <td><?php echo $value->nama_kategori ?></td>
                                 <td>
                                     <a href="javascript:void(0)" class="btn btn-warning" onclick="return showModal('edit', '<?php echo $value->id_news ?> ')">
