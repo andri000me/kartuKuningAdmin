@@ -12,8 +12,24 @@
  * @author Sigit Suryono
  */
 class Etc extends CI_Model {
+//put your code here
+    function checkIsValid($url) {
+        return filter_var($url, FILTER_SANITIZE_URL);
+    }
 
-    //put your code here
+    function stringCut($data, $length) {
+        $string = strip_tags($data);
+        if (strlen($string) > $length) {
+
+            // truncate string
+            $stringCut = substr($data, 0, $length);
+            $endPoint = strrpos($stringCut, ' ');
+
+            //if the string doesn't contain any space then it will cut without word basis.
+            $string = $endPoint ? substr($stringCut, 0, $endPoint) : substr($stringCut, 0);
+        }
+        return $string;
+    }
 
     function diffDate($date1, $date2) {
         $diff = abs(strtotime($date2) - strtotime($date1));
