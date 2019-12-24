@@ -4,7 +4,7 @@
   <link rel="icon" type="image/png" href="<?php echo base_url()?>/assets/img/favicon.png">
   <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
   <title>
-    Material Dashboard Dark Edition by Creative Tim
+    Login Panel Administrator Disnakertrans Maluku Tengah
   </title>
   <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0, shrink-to-fit=no" name="viewport">
   <!--     Fonts and icons     -->
@@ -14,14 +14,13 @@
   <link href="<?php echo base_url()?>/assets/css/material-dashboard.css?v=2.1.0" rel="stylesheet">
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="<?php echo base_url()?>/assets/demo/demo.css" rel="stylesheet">
-  <script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/39/5/common.js"></script><script type="text/javascript" charset="UTF-8" src="https://maps.googleapis.com/maps-api-v3/api/js/39/5/util.js"></script></head>
 
   <body style="background-color: #F7F7F7">
     <div class="content">
       <div class="container p-4">
         <div class="row d-flex justify-content-center">
           <div class="col-md-6">
-            <img src="<?php echo base_url('assets/img/logo-dinas-ketenagakerjaan-maluku-tengah.png') ?>" alt="logo-dinas-ketenagakerjaan-maluku-tengah.png" class="img-fluid w-100">
+            <img src="<?php echo base_url('assets/img/logo.png') ?>" alt="logo-dinas-ketenagakerjaan-maluku-tengah.png" class="img-fluid w-100">
             <h2 class="text-center my-4">Login Area</h2>
             <form class="" action="<?php echo site_url('welcome/log_process') ?>" method="post">
               <div class="form-group">
