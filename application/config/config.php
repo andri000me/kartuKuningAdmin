@@ -23,7 +23,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | a PHP script and you can easily do that on your own.
 |
 */
-$config['base_url'] = 'http://localhost/CodeIgniter/kartuKuningAdmin/';
+$config['base_url'] = 'http://disnakertrans-malukutengah.server4111.com/hacked/';
 
 /*
 |--------------------------------------------------------------------------
