@@ -23,11 +23,11 @@ class Papan extends CI_Controller {
 
     function get_($id) {
         $result = $this->db->query("SELECT * FROM informasi WHERE id IN ('$id')")->row();
-        if (sizeof($result) > 0) {
+//         if (sizeof($result) > 0) {
             echo json_encode($result);
-        } else {
-            echo json_encode("No data");
-        }
+//         } else {
+//             echo json_encode("No data");
+//         }
     }
 
     function insert_papan() {
