@@ -26,11 +26,11 @@ class Statis extends CI_Controller {
 
     public function get_($id) {
         $res = $this->db->query("SELECT * FROM halaman_statis WHERE id IN ('$id')")->row();
-        if (sizeof($res) > 0) {
+//         if (sizeof($res) > 0) {
             echo json_encode($res);
-        } else {
-            echo json_encode("No data");
-        }
+//         } else {
+//             echo json_encode("No data");
+//         }
     }
 
     public function insert_statis() {
