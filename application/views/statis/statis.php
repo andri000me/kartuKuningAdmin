@@ -31,10 +31,10 @@
                                         <i class="material-icons">edit</i> &nbsp;
                                         Edit
                                     </a>
-                                    <a href="javascript:void(0)" onclick="return hapus('<?php echo $value->id ?>')" class="btn btn-danger">
+<!--                                    <a href="javascript:void(0)" onclick="return hapus('<?php echo $value->id ?>')" class="btn btn-danger">
                                         <i class="material-icons">remove</i> &nbsp;
                                         Hapus
-                                    </a>
+                                    </a>-->
                                 </td>
                             </tr>
                         <?php } ?>
