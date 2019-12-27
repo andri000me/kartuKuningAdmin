@@ -65,6 +65,12 @@
                             </a>
                         </li>
                         <li class="nav-item ">
+                            <a class="nav-link" href="<?php echo site_url('pendaftar-kartu-kuning') ?>">
+                                <i class="material-icons">library_books</i>
+                                <p>Pendaftar Kartu Kuning</p>
+                            </a>
+                        </li>
+                        <li class="nav-item ">
                             <a class="nav-link" href="<?php echo site_url('papan-informasi') ?>">
                                 <i class="material-icons">bubble_chart</i>
                                 <p>Papan Informasi</p>

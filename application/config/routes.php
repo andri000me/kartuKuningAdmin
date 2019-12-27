@@ -62,3 +62,4 @@ $route['pengumuman'] = 'Pengumuman/index';
 $route['papan-informasi'] = 'Papan/index';
 $route['lowongan-kerja'] = 'Lowongan/index';
 $route['halaman-statis'] = 'statis/index';
+$route['pendaftar-kartu-kuning'] = 'pendaftar/index';
