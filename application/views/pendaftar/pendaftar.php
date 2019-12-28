@@ -29,21 +29,21 @@ $jk['P'] = "Perempuan";
                                     <td><?php echo $jk[$value->jk] ?></td>
                                     <td><img class="img-fluid w-25" src="<?php echo base_url('uploads/pendaftaran/' . $value->foto) ?>" /></td>
                                     <td>
-    <!--                                    <a href="javascript:void(0)" onclick="return showModal('edit', '<?php echo $value->id ?>')" class="btn btn-warning">
-                                            <i class="material-icons">edit</i> &nbsp;
-                                            Edit
-                                        </a>-->
-                                        <a href="javascript:void(0)" onclick="return window.open('<?php echo site_url('pendaftar/detail_pendaftar/'. $value->nik)?>', '', 'width=500,height=900');" class="btn btn-success">
+                                        <a href="javascript:void(0)" onclick="return akivasi('<?php echo $value->nik ?>')" class="btn btn-info">
+                                            <i class="material-icons">check</i> &nbsp;
+                                            Aktifkan Akun
+                                        </a>
+                                        <a href="javascript:void(0)" onclick="return window.open('<?php echo site_url('pendaftar/detail_pendaftar/' . $value->nik) ?>', '', 'width=500,height=900');" class="btn btn-success">
                                             <i class="material-icons">visibility</i> &nbsp;
                                             Lihat Semua Data
                                         </a>
-                                        <a href="javascript:void(0)" onclick="return hapus('<?php echo $value->nik ?>')" class="btn btn-danger">
+    <!--                                        <a href="javascript:void(0)" onclick="return hapus('<?php echo $value->nik ?>')" class="btn btn-danger">
                                             <i class="material-icons">remove</i> &nbsp;
                                             Hapus
-                                        </a>
+                                        </a>-->
                                     </td>
                                 </tr>
-                          ''<?php } ?>
+                                ''<?php } ?>
                         </tbody>
                     </table>
                 </div>
@@ -51,3 +51,26 @@ $jk['P'] = "Perempuan";
         </div>
     </div>
 </div>
+<script>
+    function akivasi(id) {
+        var i = confirm("Aktivasi akun ini ?");
+        var url = "<?php echo site_url('pendaftar/aktivasi/') ?>" + id;
+        console.log(url);
+        if (i) {
+            $.ajax({
+                url: url,
+                success: function (data, textStatus, jqXHR) {
+                    if (textStatus == 'success') {
+                        alert('Akun Berhasil Diaktifkan');
+                    } else {
+                        alert('Akun gagal diaktifkan')
+                    }
+                    window.location.reload();
+                },
+                error: function (jqXHR, textStatus, errorThrown) {
+
+                }
+            })
+        }
+    }
+</script>
